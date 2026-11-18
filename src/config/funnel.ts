@@ -4,10 +4,10 @@
 
 // ── Cliente ───────────────────────────────────────────────────────────────────
 export const CLIENT = {
-  name: '', // nombre comercial que se muestra: "Mi Marca"
-  person: '', // quien habla en el VSL: "Juan Pérez"
-  instagram: '', // URL completa
-  facebook: '',
+  name: 'DECO by DC', // nombre comercial que se muestra: "Mi Marca"
+  person: 'Cristin', // quien habla en el VSL: "Juan Pérez"
+  instagram: 'https://www.instagram.com/deco_by_dc/', // URL completa
+  facebook: 'https://www.facebook.com/decoguayaquil',
 }
 
 /** Nombre que se muestra en la página (wordmark, títulos, legales). */
@@ -21,23 +21,24 @@ export const SITE_URL = ''
 // ── Meta ──────────────────────────────────────────────────────────────────────
 // vite.config.ts inyecta el snippet del pixel en index.html con este id (vacío = sin pixel).
 // CAPI lee el id y el token desde env vars de Vercel (META_PIXEL_ID, META_CAPI_TOKEN), nunca de aquí.
-export const META_PIXEL_ID = ''
+export const META_PIXEL_ID = '1911131140329075'
 
 // ── GoHighLevel (subcuenta DEL CLIENTE) ───────────────────────────────────────
-export const GHL_CONTACT_WEBHOOK = '' // "obtener contacto"
-export const GHL_QUALIFICATION_WEBHOOK = '' // "obtener cualificación"
-export const GHL_BOOKING_CALENDAR = '' // URL del src del iframe del código de inserción
+export const GHL_CONTACT_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/TjJuyj3OpjvpdDlZuRVl/webhook-trigger/kEo69GoYyr0EvXJUVqPq' // "obtener contacto"
+export const GHL_QUALIFICATION_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/TjJuyj3OpjvpdDlZuRVl/webhook-trigger/49oznerKGZRH9bQyZGn1' // "obtener cualificación"
+export const GHL_BOOKING_CALENDAR = 'https://api.leadconnectorhq.com/widget/booking/9TWi5r0Z4MuTaSs3lH3c' // URL del src del iframe del código de inserción
 // Id del iframe en formato del código de inserción de GHL (<calendarId>_<timestamp>);
 // form_embed.js lo usa para el alto automático. Cópialo del embed que manda el cliente.
-export const GHL_BOOKING_FRAME_ID = ''
+export const GHL_BOOKING_FRAME_ID = '9TWi5r0Z4MuTaSs3lH3c_1795018815596'
 
 // ── Imágenes ──────────────────────────────────────────────────────────────────
 // Portada del video en la landing (foto de quien habla). URL de Cloudinary (f_auto,q_auto,w_1200).
 // Si el CDN falla se usa VSL_POSTER_FALLBACK (archivo en public/). Ambos vacíos = recuadro oscuro.
 export const VSL_POSTER = ''
-export const VSL_POSTER_FALLBACK = '' // ej. '/vsl-poster.webp'
+export const VSL_POSTER_FALLBACK = '/cristin.webp' // ej. '/vsl-poster.webp'
 // Logo como URL absoluta (para el JSON-LD de la empresa). Vacío = el JSON-LD va sin logo.
-export const LOGO_URL = ''
+export const LOGO_URL =
+  'https://res.cloudinary.com/xivqv1l8/image/upload/v1793046516/resources/6ada381a548cdf137f871010/qk1k13nqfndtvmdahwos.png'
 
 // ── Video ─────────────────────────────────────────────────────────────────────
 export const WISTIA_MEDIA_ID = ''
@@ -50,7 +51,7 @@ export const TIMER_CYCLE_HOURS = 12
 
 // ── Registro ──────────────────────────────────────────────────────────────────
 // true = el formulario de registro pide ciudad (va a GHL como `ciudad`)
-export const ASK_CITY = false
+export const ASK_CITY = true // la visita cuesta distinto fuera de Samborondón
 // País preseleccionado del teléfono (ISO 3166 alfa-2)
 export const DEFAULT_COUNTRY = 'EC'
 
@@ -86,10 +87,10 @@ export const LEGAL = {
 }
 
 // Prefijo de las claves de localStorage/sessionStorage (2-3 letras del cliente)
-export const STORAGE_PREFIX = 'fn'
+export const STORAGE_PREFIX = 'dc'
 
 // Nombre del funnel para tags y notas de GHL ("funnel-micliente")
-export const FUNNEL_TAG = 'funnel'
+export const FUNNEL_TAG = 'funnel-deco'
 
 export const IS_LOCAL = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
 

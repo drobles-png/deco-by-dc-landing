@@ -25,14 +25,23 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.15;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
+h1,
+h2 {
+  font-family: $font-serif;
+  font-weight: 350;
+  font-variation-settings: 'SOFT' 50, 'opsz' 96;
+  letter-spacing: -0.02em;
+}
+
 p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 a {
@@ -88,14 +97,14 @@ img {
   cursor: pointer;
   transition:
     background-color 0.2s ease,
-    transform 0.15s ease;
+    transform 160ms $ease-out;
   touch-action: manipulation;
 
   &:hover:not(:disabled) {
     background: $primary-hover;
   }
   &:active:not(:disabled) {
-    transform: scale(0.98);
+    transform: scale(0.97);
   }
   &:disabled {
     cursor: not-allowed;
@@ -197,12 +206,12 @@ img {
 
   &__close {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
     display: grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border: 1px solid $line;
     border-radius: 50%;
     background: $surface;
@@ -236,6 +245,7 @@ img {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     animation-duration: 0.01ms !important;
   }
 }

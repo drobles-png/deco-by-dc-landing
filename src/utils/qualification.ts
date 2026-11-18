@@ -21,40 +21,44 @@ export interface Question {
 
 export const QUESTIONS = [
   {
-    key: 'perfil',
-    title: '[Pregunta 1: ¿Qué te describe mejor?]',
-    noteLabel: 'Perfil',
+    key: 'espacio',
+    title: '¿Qué espacio quieres trabajar?',
+    noteLabel: 'Espacio',
     options: [
-      { value: 'perfil_a', label: '[Perfil ideal A]' },
-      { value: 'perfil_b', label: '[Perfil ideal B]' },
-      { value: 'solo_info', label: '[Solo quiero informarme por ahora]' },
+      { value: 'casa_completa', label: 'Mi casa o departamento completo' },
+      { value: 'sala_comedor', label: 'La sala y el comedor' },
+      { value: 'cocina', label: 'La cocina' },
+      { value: 'dormitorio_closet', label: 'Un dormitorio o un walk-in closet' },
+      { value: 'un_mueble', label: 'Solo busco un mueble puntual' },
     ],
   },
   {
-    key: 'situacion',
-    title: '[Pregunta 2: ¿En qué punto estás hoy?]',
-    noteLabel: 'Situación',
+    key: 'momento',
+    title: '¿En qué momento estás?',
+    noteLabel: 'Momento',
     options: [
-      { value: 'empezando', label: '[Estoy empezando]' },
-      { value: 'en_marcha', label: '[Ya lo hago y quiero crecer]' },
+      { value: 'recien_mudado', label: 'Me acaban de entregar mi casa o me voy a mudar' },
+      { value: 'renovar', label: 'Quiero renovar un espacio de mi casa' },
+      { value: 'solo_info', label: 'Solo estoy viendo ideas por ahora' },
     ],
   },
   {
     key: 'inversion',
-    title: '[Pregunta 3: ¿Cómo piensas invertir?]',
+    title: '¿Cuánto tienes pensado invertir en tu proyecto?',
     noteLabel: 'Inversión',
     options: [
-      { value: 'tengo_capital', label: '[Tengo el capital para invertir]' },
-      { value: 'financiamiento', label: '[Con financiamiento o un socio]' },
-      { value: 'sin_presupuesto', label: '[Por ahora no tengo cómo invertir]' },
+      { value: 'menos_2k', label: 'Menos de $2,000' },
+      { value: '2k_5k', label: 'Entre $2,000 y $5,000' },
+      { value: '5k_10k', label: 'Entre $5,000 y $10,000' },
+      { value: 'mas_10k', label: 'Más de $10,000' },
     ],
   },
 ] as const satisfies readonly Question[]
 
 /** Último paso: pregunta abierta (va a GHL como `objetivo`). */
 export const OBJETIVO = {
-  title: '[Pregunta abierta: ¿Qué quieres lograr?]',
-  placeholder: '[Ejemplo de respuesta que oriente al lead]',
+  title: 'Cuéntame de tu espacio: ¿qué no te gusta de cómo está hoy y qué te gustaría sentir al llegar?',
+  placeholder: 'Ej.: quién vive ahí, cómo usan el espacio y el estilo que te gusta (cálido, minimalista, clásico…)',
   minWords: 10,
 }
 
@@ -70,12 +74,12 @@ export function labelFor(key: QuestionKey, value: string): string {
 }
 
 // ── Regla de cualificación ────────────────────────────────────────────────────
-// Por defecto se descarta solo a quien viene "a informarse" o no tiene cómo invertir.
-// El resto de respuestas no descalifica: sirven para preparar la reunión.
-// Ajustar con el cliente (quién SÍ es cliente) y documentarlo en el CLAUDE.md del proyecto.
+// Del VSL: "No vendemos una silla o una mesa suelta" y la fabricación arranca en ~$2,000
+// (walk-in closet pequeño). Quien solo ve ideas tampoco pasa a la agenda.
 const DISQUALIFY: Partial<Record<QuestionKey, readonly string[]>> = {
-  perfil: ['solo_info'],
-  inversion: ['sin_presupuesto'],
+  espacio: ['un_mueble'],
+  momento: ['solo_info'],
+  inversion: ['menos_2k'],
 }
 
 export function qualifies(a: Answers): boolean {

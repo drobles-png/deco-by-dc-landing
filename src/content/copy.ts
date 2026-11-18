@@ -21,12 +21,13 @@ export interface TeamMember {
 
 export const SEO = {
   landing: {
-    title: `${BRAND_NAME} | [Promesa principal del VSL]`,
-    description: '[Descripción de 150 caracteres con la promesa y para quién es]',
+    title: `${BRAND_NAME} | Diseño de interiores y fábrica propia en Samborondón`,
+    description:
+      'Diseñamos y fabricamos tu sala, cocina, dormitorio o casa completa en Samborondón. Fábrica propia: lo que ves en el diseño es lo que llega a tu casa.',
   },
-  video: { title: `Mira el video | ${BRAND_NAME}`, description: '[Descripción del video]' },
-  booking: { title: `Agenda tu reunión | ${BRAND_NAME}`, description: 'Elige el día y la hora.' },
-  booked: { title: `Reunión confirmada | ${BRAND_NAME}`, description: 'Tu reunión está confirmada.' },
+  video: { title: `Mira el video | ${BRAND_NAME}`, description: 'Cristin te cuenta cómo trabajamos, cuánto cuesta y cuál es el primer paso.' },
+  booking: { title: `Agenda tu visita | ${BRAND_NAME}`, description: 'Elige el día y la hora.' },
+  booked: { title: `Visita agendada | ${BRAND_NAME}`, description: 'Tu visita está agendada.' },
   noSpace: { title: `Todavía no es el momento | ${BRAND_NAME}`, description: 'Gracias por tu interés.' },
   pago: { title: `Confirma tu lugar | ${BRAND_NAME}`, description: 'Completa tu inscripción.' },
   confirmada: { title: `Inscripción confirmada | ${BRAND_NAME}`, description: 'Tu lugar está confirmado.' },
@@ -35,82 +36,113 @@ export const SEO = {
 }
 
 // ── Landing (/) ───────────────────────────────────────────────────────────────
+// Todo sale del VSL de Cristin (fases 1 a 6). Estructura corta: hero → origen → proceso → Cristin.
 export const LANDING = {
-  topbarTag: '[Categoría o propuesta en 4 palabras]',
   // Temporizador del encabezado (components/CountdownTimer.vue). short = versión de celular.
-  timer: { label: 'Agenda de asesorías', short: 'Agenda', prefix: 'Cierra en' },
-  audience: ['[Para quién es 1]', '[Para quién es 2]', '[Para quién es 3]'],
-  headline: '[Promesa principal del VSL]',
-  headlineAccent: '[parte destacada de la promesa]',
-  sub: `[Subtítulo: el dolor en una frase]. ${PERSON_NAME} te lo cuenta en un video corto.`,
-  videoCaption: `${PERSON_NAME} · [Duración del video]`,
+  timer: { label: 'Agenda de visitas', short: 'Visitas', prefix: 'Cierra en' },
+  headline: 'Una casa bonita no se arma comprando muebles.',
+  headlineAccent: 'Se diseña completa.',
+  sub: `Hola, soy ${PERSON_NAME}. Hace diez años diseño y fabrico espacios para casas y departamentos en Samborondón. En este video te cuento cómo trabajamos, cuánto cuesta y cuál es el primer paso.`,
+  videoCaption: 'Fundadora de DECO by DC',
   cta: 'Ver el video completo',
   ctaNote: 'Sin costo · Solo te pedimos tus datos para mostrártelo',
+  heroFacts: ['10 años', 'Fábrica propia', 'Samborondón'],
 
-  pains: {
-    eyebrow: 'El problema',
-    title: '[Titular del dolor]',
-    items: [
-      { icon: 'fa-circle-exclamation', title: '[Dolor 1]', text: '[Explicación del dolor 1, en la voz del VSL]' },
-      { icon: 'fa-circle-exclamation', title: '[Dolor 2]', text: '[Explicación del dolor 2]' },
+  // Banda oscura: el origen en el taller de piedra
+  origin: {
+    kicker: 'Empezamos fabricando mesas de mármol.',
+    story: [
+      'Un cliente recibía su mesa y, a los pocos días, nos escribía: "Las sillas que tengo ya no van con la mesa, ¿me las pueden hacer?". Luego nos pedía el aparador. Después la sala.',
+      'Ahí entendimos algo: nuestros clientes no buscaban una mesa. Buscaban que su casa se sintiera completa.',
     ],
+    statement: 'Lo que ves en el diseño es lo que llega a tu casa.',
+    statementSub:
+      'Como venimos de la fábrica, cuando diseño tu sala o tu cocina ya sé cómo se va a fabricar cada pieza, con qué material y cuánto va a costar.',
   },
 
   steps: {
-    eyebrow: 'Cómo funciona',
-    title: '[Titular de la solución en N pasos]',
+    title: 'De la primera visita a tu casa terminada, en un mes y medio.',
     items: [
-      { title: '[Paso 1]', text: '[Qué se resuelve en el paso 1]' },
-      { title: '[Paso 2]', text: '[Qué se resuelve en el paso 2]' },
-      { title: '[Paso 3]', text: '[Qué se resuelve en el paso 3]' },
+      {
+        title: 'La visita',
+        meta: '1 hora · $40 en Samborondón',
+        text: 'Voy a tu casa, conozco el espacio y tomo medidas. Pero es una asesoría: conversamos cómo usas el espacio, quién vive ahí y qué te gustaría sentir al llegar. Te quedas con recomendaciones concretas aunque no sigamos juntos.',
+      },
+      {
+        title: 'El diseño',
+        meta: 'En unos 10 días · $20 por m²',
+        text: 'No es un boceto: es el proyecto completo. Renders con iluminación, colores y cada mueble en su lugar, medidas y acabados. Junto con el presupuesto, detallado rubro por rubro.',
+      },
+      {
+        title: 'El diseño es tuyo',
+        meta: 'Sin presión',
+        text: 'Los renders y los planos son tuyos. Si decides que lo fabriquemos nosotros, encantados. Y si no, te los llevas igual.',
+      },
+      {
+        title: 'La fabricación',
+        meta: '20 días a 1 mes · Garantía de 1 año',
+        text: 'Fábrica propia, sin subcontratar: todo pasa por nuestro taller y nuestro control de calidad. Y como venimos de las piedras naturales, te asesoramos en mármol, granito, cuarzo y porcelanato.',
+      },
     ],
-    cta: 'Quiero ver cómo',
-  },
-
-  // Testimonios REALES del cliente (del VSL, de Google o de capturas que mande). Vacío = la sección
-  // no se muestra. photo: URL de Cloudinary o '' (muestra las iniciales).
-  // Formato: { name: 'Ana Pérez', role: 'Dueña de X · Quito', quote: '…', result: '+30% en ventas', photo: '' }
-  testimonials: {
-    eyebrow: 'Resultados',
-    title: '[Lo que dicen quienes ya lo hicieron]',
-    items: [] as Testimonial[],
-  },
-
-  // Quién está detrás (genera confianza antes de agendar). Vacío = la sección no se muestra.
-  // Formato: { name: 'Juan Pérez', role: 'CEO y fundador', bio: '…', photo: '' }
-  team: {
-    eyebrow: 'Quién te acompaña',
-    title: '[El equipo detrás de la reunión]',
-    items: [] as TeamMember[],
-  },
-
-  fit: {
-    eyebrow: 'Antes de seguir',
-    title: '¿Es para ti?',
-    items: [
-      { yes: true, text: '[Sí es para ti si…]' },
-      { yes: true, text: '[Sí es para ti si…]' },
-      { yes: false, text: '[No es para ti si…]' },
-    ],
-  },
-
-  closing: {
-    eyebrow: 'Siguiente paso',
-    title: '[Llamado final: mira el video y agendemos]',
-    sub: '[Qué pasa en la reunión y por qué vale la pena]',
+    budgetNote:
+      'Si el proyecto suma $12,000 y quieres invertir $8,000, no bajamos la calidad para que cuadre. Revisamos juntos cada rubro y dejamos para una segunda etapa lo que no es prioridad.',
     cta: 'Ver el video completo',
   },
 
-  sticky: { title: '[Nombre corto de la oferta]', sub: `Video de ${PERSON_NAME}`, cta: 'Ver video' },
+  // Referencias de inversión del VSL (fase 3)
+  prices: {
+    title: 'Para que tengas una referencia desde ahora',
+    items: [
+      { space: 'Dormitorio completo', detail: 'Paredes, cama, veladores y espejos', range: '$4,000 – $6,000' },
+      { space: 'Walk-in closet pequeño', detail: '', range: '$2,000 – $3,000' },
+      { space: 'Walk-in closet amplio', detail: '', range: '$5,000 – $8,000' },
+      { space: 'Cocina', detail: 'Remodelación total', range: '$8,000 – $12,000' },
+    ],
+    note: 'Cada proyecto depende del tamaño del espacio y de los acabados que elijas.',
+  },
+
+  about: {
+    title: `Hola, soy ${PERSON_NAME}.`,
+    role: 'Fundadora de DECO by DC',
+    paragraphs: [
+      'En este proceso, quien decide eres tú. Tu estilo y tu forma de vivir son el punto de partida, y mi firma pasa a segundo plano. Si te gusta lo cálido, lo minimalista o algo más clásico, el diseño nace de ahí.',
+      'Durante todo el proceso hablas directamente conmigo, sin intermediarios. Y la mayoría de nuestros clientes llega porque alguien cercano les recomendó.',
+    ],
+    stats: [
+      { value: '10', unit: 'años', label: 'diseñando y fabricando' },
+      { value: '1', unit: 'año', label: 'de garantía por fabricación' },
+      { value: '100', unit: '%', label: 'en nuestro taller, sin subcontratar' },
+    ],
+    quote: 'Quedó tal como lo soñaba.',
+    quoteSource: 'La frase que más escucho al entregar un proyecto',
+    closing: 'Si te acabas de mudar o quieres renovar un espacio de tu casa, mira el video y agenda tu visita.',
+    cta: 'Ver el video completo',
+  },
+
+  // Testimonios REALES del cliente. Vacío = la sección no se muestra.
+  testimonials: {
+    eyebrow: 'Resultados',
+    title: 'Lo que dicen nuestros clientes',
+    items: [] as Testimonial[],
+  },
+
+  // Equipo. Vacío = la sección no se muestra.
+  team: {
+    eyebrow: 'Quién te acompaña',
+    title: 'El equipo',
+    items: [] as TeamMember[],
+  },
+
+  sticky: { title: 'Tu casa, diseñada completa', sub: `Video de ${PERSON_NAME} · ${BRAND_NAME}`, cta: 'Ver video' },
   disclaimer:
     'Los resultados dependen de cada caso. Este sitio no está respaldado por Meta Platforms, Inc. ni forma parte de Facebook.',
 }
 
 // ── Modal de registro ─────────────────────────────────────────────────────────
 export const REGISTRO = {
-  eyebrow: '[Nombre corto de la oferta]',
+  eyebrow: 'DECO by DC',
   title: 'Mira el video completo',
-  sub: '[Por qué dejar tus datos: qué vas a ver y qué pasa después]',
+  sub: 'Cristin te cuenta cómo trabajamos, cuánto cuesta y cuál es el primer paso. Al final puedes agendar tu visita.',
   submit: 'Ver el video completo',
   submitPago: 'Continuar',
   legal: 'Tus datos están seguros · No spam',
@@ -120,17 +152,17 @@ export const REGISTRO = {
 export const VIDEO = {
   step: 'Paso 1 de 2',
   eyebrow: `${PERSON_NAME} · ${BRAND_NAME}`,
-  title: '[Titular del VSL completo]',
-  sub: 'Mira el video completo. Al final puedes agendar una reunión.',
+  title: 'Cómo diseñamos y fabricamos tu espacio completo',
+  sub: 'Mira el video completo. Al final puedes agendar tu visita.',
   lockText: 'El botón se habilita en',
-  cta: 'Agendar mi reunión',
-  trust: 'Reunión sin costo · Cupos sujetos a cualificación',
+  cta: 'Agendar mi visita',
+  trust: 'Visita de asesoría: $40 en Samborondón · Otras zonas según la distancia',
 }
 
 // ── Cualificación (las preguntas están en utils/qualification.ts) ─────────────
 export const CUALIFICACION = {
   eyebrow: 'Último paso',
-  title: 'Cuéntanos de tu caso',
+  title: 'Cuéntame qué espacio quieres trabajar',
   sub: 'Una pregunta a la vez. Te toma un minuto.',
   consent: `Acepto que ${BRAND_NAME} me contacte por WhatsApp y correo, y acepto su`,
   submit: 'Ver horarios disponibles',
@@ -139,30 +171,30 @@ export const CUALIFICACION = {
 // ── /agendar ──────────────────────────────────────────────────────────────────
 export const BOOKING = {
   step: 'Paso 2 de 2',
-  title: 'Elige tu horario',
-  sub: '[Qué se conversa en la reunión]. Sin costo.',
+  title: 'Elige el día de tu visita',
+  sub: 'Conozco tu espacio, tomo medidas y conversamos qué quieres lograr. La visita tiene un valor de $40 en Samborondón; en otras zonas varía según la distancia.',
   pending:
-    'Estamos terminando de configurar el calendario. Te escribiremos por WhatsApp para coordinar tu reunión.',
+    'Estamos terminando de configurar el calendario. Te escribiremos por WhatsApp para coordinar tu visita.',
 }
 
 // ── /cita-confirmada ──────────────────────────────────────────────────────────
 export const BOOKED = {
-  title: 'Tu reunión está confirmada',
+  title: 'Tu visita está agendada',
   sub: 'Te enviamos los detalles a tu correo.',
   steps: [
-    { icon: 'fa-solid fa-envelope', title: 'Revisa tu correo', text: 'Ahí tienes la fecha, la hora y el enlace.' },
-    { icon: 'fa-brands fa-whatsapp', title: 'Te escribimos por WhatsApp', text: 'Para confirmar y resolver dudas antes.' },
-    { icon: 'fa-solid fa-list-check', title: '[Qué preparar]', text: '[Qué tener a mano para la reunión]' },
+    { icon: 'fa-solid fa-envelope', title: 'Revisa tu correo', text: 'Ahí tienes la fecha y la hora de tu visita.' },
+    { icon: 'fa-brands fa-whatsapp', title: 'Te escribimos por WhatsApp', text: 'Mi equipo te escribe para confirmar la dirección y resolver dudas.' },
+    { icon: 'fa-solid fa-list-check', title: 'Piensa en tu espacio', text: 'Cómo lo usas, quién vive ahí, qué no te gusta hoy y qué te gustaría sentir al llegar.' },
   ],
 }
 
 // ── /sin-espacio ──────────────────────────────────────────────────────────────
 export const NO_SPACE = {
   title: 'Todavía no es el momento, y está bien',
-  text: '[Por qué hoy no hay reunión para su caso, con respeto]. Cuando estés listo, aquí estamos.',
+  text: 'Nosotros trabajamos proyectos de diseño: no vendemos una silla o una mesa suelta. Si lo que buscas es un mueble puntual, hay muchas opciones en el mercado, y es completamente válido. Cuando quieras resolver un espacio completo, aquí estamos.',
   cooldown: 'Ya enviaste una solicitud. Podrás intentarlo de nuevo en',
   resourcesTitle: `Sigue aprendiendo con ${BRAND_NAME}`,
-  resourcesText: '[Qué publica la marca en redes]',
+  resourcesText: 'En Instagram compartimos proyectos, materiales y el día a día del taller.',
 }
 
 // ── Pago (opcional) ───────────────────────────────────────────────────────────

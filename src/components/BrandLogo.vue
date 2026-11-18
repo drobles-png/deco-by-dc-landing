@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Logo neutro (wordmark de texto + marca SVG). Para un cliente: reemplazar el contenido por
-// <img src="@/assets/logos/<cliente>-logo.webp" :alt="BRAND_NAME" /> (PNG/WebP con fondo transparente).
+// Logo DECO by DC redibujado: isotipo de tres piezas + wordmark geométrico espaciado.
+import DecoMark from '@/components/DecoMark.vue'
 import { BRAND_NAME } from '@/config/funnel'
 
 defineProps<{ light?: boolean }>()
@@ -8,11 +8,11 @@ defineProps<{ light?: boolean }>()
 
 <template>
   <span class="logo" :class="{ 'logo--light': light }" role="img" :aria-label="BRAND_NAME">
-    <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
-      <rect class="logo__bg" x="1" y="1" width="30" height="30" rx="8" />
-      <rect x="9" y="9" width="14" height="14" rx="3" fill="none" class="logo__inner" stroke-width="3" />
-    </svg>
-    <span class="logo__text" aria-hidden="true">{{ BRAND_NAME }}</span>
+    <DecoMark class="logo__mark" :mono="light" />
+    <span class="logo__word" aria-hidden="true">
+      <span class="logo__deco">DECO</span>
+      <span class="logo__by">by <b>DC</b></span>
+    </span>
   </span>
 </template>
 
@@ -20,31 +20,40 @@ defineProps<{ light?: boolean }>()
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: $ink;
+  gap: 12px;
+  color: $espresso;
 
   &__mark {
-    width: 28px;
-    height: 28px;
-  }
-  &__bg {
-    fill: $ink;
-  }
-  &__inner {
-    stroke: $primary;
+    width: 34px;
+    height: 34px;
   }
 
-  &__text {
-    font-weight: 600;
-    font-size: 1.05rem;
-    letter-spacing: -0.01em;
+  &__word {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1;
+  }
+
+  &__deco {
+    font-weight: 300;
+    font-size: 1.35rem;
+    letter-spacing: 0.32em;
+    margin-right: -0.32em; // compensa el espaciado de la última letra
+  }
+
+  &__by {
+    margin-top: 3px;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+
+    b {
+      font-weight: 700;
+    }
   }
 
   &--light {
     color: $ink-on-dark;
-    .logo__bg {
-      fill: $raised;
-    }
   }
 }
 </style>
