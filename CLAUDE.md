@@ -41,11 +41,14 @@ o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Confirmar con Cri
 Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-by-dc.vercel.app (único dominio, pedido del usuario).
 Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
 Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
-Muestras de GHL enviadas el 18 nov 2026 (contacto `prueba.califica@bakano-test.com`: borrarlo al terminar).
+Muestras de GHL enviadas el 18 nov 2026. Prueba final en producción (modo ghl) OK el 18 nov: contacto, 3 notas, tags y oportunidad.
+Contactos de prueba a borrar: `prueba.califica@bakano-test.com`, `prueba.final.deco@bakano-test.com`.
+`META_CAPI_TEST_EVENT_CODE=TEST21541` puesto en Vercel (production) el 18 nov: QUITARLO tras el Probador y redeploy.
 
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
 - Confirmar la regla de cualificación con Cristin.
-- Workflows de GHL: mapear con las muestras, publicar y probar; Probador de eventos de Meta.
-- Revisar que el calendario tenga horarios de disponibilidad (`openHours` vacío en la API).
+- Probador de eventos de Meta (recorrido del usuario) y luego quitar el código de prueba.
+- En "Crear contacto" de GHL, Contact source dice literal `Funnel VSL <cliente>`: cambiar a `Funnel VSL DECO by DC`.
+- Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto.
