@@ -23,10 +23,11 @@ califica: `/agendar` (calendario GHL `9TWi5r0Z4MuTaSs3lH3c`) → `/cita-confirma
 Recurso propio: el logo es un cuadrado abierto de tres piezas (camel, nogal, espresso) con un trazo desfasado.
 Trazo = diseño, pieza sólida = fabricación ("lo que ves en el diseño es lo que llega a tu casa").
 1. Hero: titular serif + Cristin dentro del cuadrado del logo (portada del video; las piezas se arman al cargar).
-2. Banda espresso: origen en las mesas de mármol + foto de materiales + isotipo que se "fabrica" (`DecoMark animate`).
+2. Banda espresso: origen en las mesas de mármol + foto de la mesa de mármol + isotipo que se "fabrica" (`DecoMark animate`).
+   Galería de proyectos (`LANDING.projects`, fotos en `public/proyectos/`, elegidas del IG): mosaico en escritorio, carrusel en celular.
 3. Proceso: línea de tiempo de 4 pasos (visita $40 → diseño $20/m² → el diseño es tuyo → fabricación) +
    ficha de referencias de inversión del VSL (dormitorio, walk-in, cocina).
-4. Cristin: foto, presentación, cifras, «Quedó tal como lo soñaba» y CTA.
+4. Cristin: foto en obra con su equipo (`cristin-taller.webp`), presentación, cifras, «Quedó tal como lo soñaba» y CTA.
 Marca: `src/styles/tokens.scss` ($camel, $walnut, $espresso, $stone). Fraunces (títulos) + Outfit (texto).
 Logo redibujado en `BrandLogo.vue` + `DecoMark.vue`; favicon en `public/favicon.svg`.
 
@@ -36,10 +37,15 @@ renovar, solo_info) · `inversion` (menos_2k, 2k_5k, 5k_10k, mas_10k) · abierta
 **No califica** si `espacio = un_mueble` ("no vendemos una silla o una mesa suelta"), `momento = solo_info`
 o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Confirmar con Cristin.
 
+## Deploy
+Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-by-dc.vercel.app (único dominio, pedido del usuario).
+Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
+Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
+Muestras de GHL enviadas el 18 nov 2026 (contacto `prueba.califica@bakano-test.com`: borrarlo al terminar).
+
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
-- Fotos de proyectos en alta (hoy solo hay una foto de Cristin y el recorte de materiales).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
-- Confirmar que el calendario de GHL es la visita (los textos de `/agendar` hablan de la visita de $40).
-- Confirmar la regla de cualificación con Cristin. `WHATSAPP_NUMBER` para `/sin-espacio`.
-- Deploy en Vercel (`deco-by-dc-lng.vercel.app`), env vars de CAPI, Probador de eventos, workflows de GHL.
+- Confirmar la regla de cualificación con Cristin.
+- Workflows de GHL: mapear con las muestras, publicar y probar; Probador de eventos de Meta.
+- Revisar que el calendario tenga horarios de disponibilidad (`openHours` vacío en la API).

@@ -16,7 +16,7 @@ export const BRAND_NAME = CLIENT.name || '[Marca]'
 export const PERSON_NAME = CLIENT.person || '[Nombre de quien habla]'
 
 // Dominio público (canonical, og:url). Vacío = window.location.origin
-export const SITE_URL = ''
+export const SITE_URL = 'https://deco-by-dc.vercel.app'
 
 // ── Meta ──────────────────────────────────────────────────────────────────────
 // vite.config.ts inyecta el snippet del pixel en index.html con este id (vacío = sin pixel).
@@ -71,7 +71,7 @@ export const PAYMENT_PROVIDER: 'payphone' | 'link' = 'payphone'
 // Solo con 'link': URL de la pasarela; debe redirigir al terminar a <dominio>/inscripcion-confirmada
 export const PAYMENT_URL = ''
 // WhatsApp de respaldo para cobrar si el pago no está configurado (formato 593987654321)
-export const WHATSAPP_NUMBER = ''
+export const WHATSAPP_NUMBER = '593980216578'
 
 // ── Evento en vivo (OPCIONAL) ─────────────────────────────────────────────────
 // ISO con zona: '2026-11-20T19:00:00-05:00'. Vacío = "Te avisamos la fecha por WhatsApp y correo"

@@ -149,8 +149,8 @@ const pad = (n: number) => String(n).padStart(2, '0')
           <p v-for="p in LANDING.origin.story" :key="p">{{ p }}</p>
         </div>
         <figure v-reveal class="origin__figure">
-          <img src="/materiales.webp" alt="Muestras de mármol, madera y colores sobre la mesa de trabajo de Cristin" width="1120" height="360" loading="lazy" decoding="async" />
-          <figcaption>Mármol, madera, textiles y color: así empieza cada proyecto.</figcaption>
+          <img src="/proyectos/mesa-marmol.webp" alt="Mesa redonda de mármol con base negra acanalada" width="1200" height="1200" loading="lazy" decoding="async" />
+          <figcaption>{{ LANDING.origin.photoCaption }}</figcaption>
         </figure>
       </div>
 
@@ -160,6 +160,26 @@ const pad = (n: number) => String(n).padStart(2, '0')
           <p class="origin__big">{{ LANDING.origin.statement }}</p>
           <p class="origin__small">{{ LANDING.origin.statementSub }}</p>
         </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS: galería (en celular, carrusel con scroll horizontal) -->
+    <section class="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <h2 id="projects-title" v-reveal class="projects__title">{{ LANDING.projects.title }}</h2>
+      </div>
+      <div v-reveal class="wrap projects__grid" role="list">
+        <figure
+          v-for="(p, i) in LANDING.projects.items"
+          :key="p.src"
+          class="shot"
+          :class="`shot--${i}`"
+          role="listitem"
+          :style="{ '--i': i }"
+        >
+          <span class="shot__img"><img :src="p.src" :alt="p.alt" :width="p.w" :height="p.h" loading="lazy" decoding="async" /></span>
+          <figcaption>{{ p.label }}</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -211,7 +231,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
     <section class="about" aria-labelledby="about-title">
       <div class="wrap about__grid">
         <figure v-reveal class="about__figure">
-          <img src="/cristin.webp" :alt="`${PERSON_NAME}, fundadora de DECO by DC, revisando muestras de materiales`" width="1200" height="1200" loading="lazy" decoding="async" />
+          <img src="/cristin-taller.webp" :alt="`${PERSON_NAME} revisando un mueble en obra junto a su equipo`" width="1200" height="879" loading="lazy" decoding="async" />
         </figure>
 
         <div v-reveal class="about__copy">
@@ -684,19 +704,15 @@ const pad = (n: number) => String(n).padStart(2, '0')
       display: block;
       width: 100%;
       height: auto;
-      aspect-ratio: 1120 / 360;
+      aspect-ratio: 5 / 4;
       object-fit: cover;
-
-      @media (max-width: 599px) {
-        aspect-ratio: 4 / 3;
-        object-position: 35% 50%;
-      }
+      object-position: 50% 60%;
     }
 
     figcaption {
       margin-top: 12px;
       padding-left: 14px;
-      border-left: 2px solid $camel;
+      border-left: 1px solid $camel;
       color: $ink-on-dark-muted;
       font-size: 0.875rem;
     }
@@ -741,9 +757,152 @@ const pad = (n: number) => String(n).padStart(2, '0')
   }
 }
 
+// ── Proyectos ────────────────────────────────────────────────────────────────
+.projects {
+  padding: 96px 0 104px;
+
+  &__title {
+    max-width: 640px;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    line-height: 1.08;
+    color: $espresso;
+  }
+
+  &__grid {
+    margin-top: 48px;
+
+    // Celular: carrusel horizontal que se asoma por el borde
+    @media (max-width: 799px) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 78%;
+      gap: 12px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 16px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .shot__img {
+        aspect-ratio: 4 / 5;
+      }
+    }
+
+    // Escritorio: mosaico con la cocina como pieza grande
+    @media (min-width: 800px) {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      grid-template-rows: repeat(2, minmax(240px, 34vh));
+      gap: 16px;
+
+      .shot--0 {
+        grid-row: span 2;
+      }
+    }
+  }
+}
+
+.shot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  margin: 0;
+  scroll-snap-align: start;
+
+  &__img {
+    position: relative;
+    display: block;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    background: $stone;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1200ms $ease-out;
+    }
+  }
+
+  figcaption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $espresso;
+    font-size: 0.9375rem;
+    font-weight: 500;
+
+    &::before {
+      content: '';
+      width: 18px;
+      height: 1px;
+      background: $camel;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover .shot__img img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+// Las fotos se descubren de abajo hacia arriba, una detrás de otra
+.projects__grid.reveal {
+  opacity: 1;
+  transform: none;
+
+  .shot__img {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1000ms $ease-in-out;
+    transition-delay: calc(var(--i) * 110ms);
+  }
+  .shot__img img {
+    transform: scale(1.12);
+    transition-delay: calc(var(--i) * 110ms);
+  }
+  figcaption {
+    opacity: 0;
+    transition: opacity 600ms $ease-out;
+    transition-delay: calc(var(--i) * 110ms + 500ms);
+  }
+
+  &.is-in {
+    .shot__img {
+      clip-path: inset(0 0 0 0);
+    }
+    .shot__img img {
+      transform: scale(1);
+    }
+    figcaption {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shot__img {
+      clip-path: none;
+    }
+    .shot__img img {
+      transform: none;
+    }
+    figcaption {
+      opacity: 1;
+    }
+  }
+}
+
 // ── 3 · Proceso ──────────────────────────────────────────────────────────────
 .process {
   padding: 96px 0;
+  background: $raised;
 
   &__title {
     max-width: 780px;
@@ -840,7 +999,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
     place-items: center;
     width: 56px;
     height: 56px;
-    background: $surface;
+    background: $raised;
     border: 1px solid $espresso;
     font-family: $font-serif;
     font-size: 1.2rem;
@@ -995,6 +1154,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
       height: auto;
       aspect-ratio: 1;
       object-fit: cover;
+      object-position: 72% 40%;
     }
   }
 

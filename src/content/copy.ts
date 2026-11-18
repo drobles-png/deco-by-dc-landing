@@ -55,12 +55,25 @@ export const LANDING = {
       'Un cliente recibía su mesa y, a los pocos días, nos escribía: "Las sillas que tengo ya no van con la mesa, ¿me las pueden hacer?". Luego nos pedía el aparador. Después la sala.',
       'Ahí entendimos algo: nuestros clientes no buscaban una mesa. Buscaban que su casa se sintiera completa.',
     ],
+    photoCaption: 'Una mesa de piedra, como las primeras que fabricamos.',
     statement: 'Lo que ves en el diseño es lo que llega a tu casa.',
     statementSub:
       'Como venimos de la fábrica, cuando diseño tu sala o tu cocina ya sé cómo se va a fabricar cada pieza, con qué material y cuánto va a costar.',
   },
 
-  steps: {
+  // Galería de proyectos (fotos de Instagram que mandó el cliente, en public/proyectos)
+  projects: {
+    title: 'Cada espacio, pensado junto con el resto de la casa.',
+    items: [
+      { src: '/proyectos/cocina.webp', label: 'Cocina', alt: 'Cocina con isla de mármol, muebles altos en tono arena y lámparas colgantes negras', w: 1100, h: 1467 },
+      { src: '/proyectos/sala-comedor.webp', label: 'Sala y comedor', alt: 'Comedor con mesa de piedra y sillas tapizadas, integrado a la sala', w: 1100, h: 1375 },
+      { src: '/proyectos/dormitorio.webp', label: 'Dormitorio', alt: 'Dormitorio con cabecera tapizada, veladores y espejos ovalados iluminados', w: 1200, h: 1200 },
+      { src: '/proyectos/mueble-tv.webp', label: 'Mueble de TV', alt: 'Pared de TV con iluminación indirecta, listones azules y mueble bajo a medida', w: 1100, h: 1467 },
+      { src: '/proyectos/comedor.webp', label: 'Comedor', alt: 'Comedor de cuatro puestos con lámpara dorada y mueble alto de madera', w: 1100, h: 1956 },
+    ],
+  },
+
+steps: {
     title: 'De la primera visita a tu casa terminada, en un mes y medio.',
     items: [
       {
