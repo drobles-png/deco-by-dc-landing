@@ -35,7 +35,7 @@ Logo redibujado en `BrandLogo.vue` + `DecoMark.vue`; favicon en `public/favicon.
 `espacio` (casa_completa, sala_comedor, cocina, dormitorio_closet, un_mueble) · `momento` (recien_mudado,
 renovar, solo_info) · `inversion` (menos_2k, 2k_5k, 5k_10k, mas_10k) · abierta `objetivo`.
 **No califica** si `espacio = un_mueble` ("no vendemos una silla o una mesa suelta"), `momento = solo_info`
-o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Confirmar con Cristin.
+o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Regla aprobada por David el 18 nov 2026.
 
 ## Deploy
 Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-by-dc.vercel.app (único dominio, pedido del usuario).
@@ -48,7 +48,6 @@ Contactos de prueba a borrar: `prueba.califica@bakano-test.com`, `prueba.final.d
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
-- Confirmar la regla de cualificación con Cristin.
 - Probador de eventos de Meta (recorrido del usuario) y luego quitar el código de prueba.
 - En "Crear contacto" de GHL, Contact source dice literal `Funnel VSL <cliente>`: cambiar a `Funnel VSL DECO by DC`.
 - Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto.
