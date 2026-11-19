@@ -42,12 +42,11 @@ Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-
 Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
 Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
 Muestras de GHL enviadas el 18 nov 2026. Prueba final en producción (modo ghl) OK el 18 nov: contacto, 3 notas, tags y oportunidad.
-Contactos de prueba a borrar (todos @bakano-test.com): prueba.califica, prueba.final.deco, prueba.meta.deco, prueba.si.deco, prueba.no.deco.
+Contactos de prueba borrados el 19 nov 2026. Las ramas califica, no califica y cita funcionan (la cita tarda ~1 min por el paso Esperar).
 Meta: deduplicación verificada con e2e `--mode meta` (19 nov, 4 eventos con par navegador/servidor). Código de prueba ya quitado.
 E2E en producción: el botón de `/ver-video` tarda 120 s; usar pasos con `{"wait": 122000}` antes de `[data-cta=calificar]`.
 
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
-- GHL: activar "Permitir volver a entrar" en el workflow OBTENER CONTACTO (la cita del 18 nov 13:56 no entró).
 - Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto (el borrado por CLI lo bloquea el permiso de Claude Code).
