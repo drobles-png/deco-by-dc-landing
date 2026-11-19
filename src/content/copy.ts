@@ -193,6 +193,9 @@ export const BOOKING = {
 // ── /cita-confirmada ──────────────────────────────────────────────────────────
 export const BOOKED = {
   title: 'Tu visita está agendada',
+  whatsappCta: `Escríbele a ${PERSON_NAME} por WhatsApp`,
+  whatsappMsg: (nombre: string) =>
+    nombre ? `Hola, soy ${nombre}. Acabo de agendar mi visita con ${BRAND_NAME}.` : `Hola, acabo de agendar mi visita con ${BRAND_NAME}.`,
   sub: 'Te enviamos los detalles a tu correo.',
   steps: [
     { icon: 'fa-solid fa-envelope', title: 'Revisa tu correo', text: 'Ahí tienes la fecha y la hora de tu visita.' },

@@ -49,5 +49,6 @@ Contactos de prueba a borrar: `prueba.califica@bakano-test.com`, `prueba.final.d
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
 - Probador de eventos de Meta (recorrido del usuario) y luego quitar el código de prueba.
-- En "Crear contacto" de GHL, Contact source dice literal `Funnel VSL <cliente>`: cambiar a `Funnel VSL DECO by DC`.
-- Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto.
+- GHL: activar "Permitir volver a entrar" en el workflow OBTENER CONTACTO (la cita del 18 nov 13:56 no entró).
+- Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto (el borrado por CLI lo bloquea el permiso de Claude Code).
+- WhatsApp 593980216578: botón "Escríbele a Cristin" en `/cita-confirmada` (BookedView).
