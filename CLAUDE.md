@@ -16,7 +16,7 @@ califica: `/agendar` (calendario GHL `9TWi5r0Z4MuTaSs3lH3c`) → `/cita-confirma
 ## Config (`src/config/funnel.ts`)
 `CLIENT` lleno · Pixel `1911131140329075` · webhooks de contacto y cualificación de la subcuenta del cliente ·
 `ASK_CITY = true` (la visita cuesta distinto fuera de Samborondón) · `STORAGE_PREFIX = 'dc'` ·
-`FUNNEL_TAG = 'funnel-deco'` · `VSL_POSTER_FALLBACK = '/cristin.webp'` · `WISTIA_MEDIA_ID` vacío (pendiente).
+`FUNNEL_TAG = 'funnel-deco'` · `WHATSAPP_NUMBER = '593980216578'` (botón en `/cita-confirmada`) · `VSL_POSTER_FALLBACK = '/cristin.webp'` · `WISTIA_MEDIA_ID` vacío (pendiente).
 `META_CAPI_TOKEN` solo en `.env.local` y Vercel.
 
 ## Landing (FunnelView.vue) — estructura corta, 4 bloques
@@ -42,13 +42,12 @@ Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-
 Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
 Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
 Muestras de GHL enviadas el 18 nov 2026. Prueba final en producción (modo ghl) OK el 18 nov: contacto, 3 notas, tags y oportunidad.
-Contactos de prueba a borrar: `prueba.califica@bakano-test.com`, `prueba.final.deco@bakano-test.com`.
-`META_CAPI_TEST_EVENT_CODE=TEST21541` puesto en Vercel (production) el 18 nov: QUITARLO tras el Probador y redeploy.
+Contactos de prueba a borrar (todos @bakano-test.com): prueba.califica, prueba.final.deco, prueba.meta.deco, prueba.si.deco, prueba.no.deco.
+Meta: deduplicación verificada con e2e `--mode meta` (19 nov, 4 eventos con par navegador/servidor). Código de prueba ya quitado.
+E2E en producción: el botón de `/ver-video` tarda 120 s; usar pasos con `{"wait": 122000}` antes de `[data-cta=calificar]`.
 
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
-- Probador de eventos de Meta (recorrido del usuario) y luego quitar el código de prueba.
 - GHL: activar "Permitir volver a entrar" en el workflow OBTENER CONTACTO (la cita del 18 nov 13:56 no entró).
 - Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto (el borrado por CLI lo bloquea el permiso de Claude Code).
-- WhatsApp 593980216578: botón "Escríbele a Cristin" en `/cita-confirmada` (BookedView).
