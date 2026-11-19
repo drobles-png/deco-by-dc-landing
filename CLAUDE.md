@@ -49,4 +49,3 @@ E2E en producción: el botón de `/ver-video` tarda 120 s; usar pasos con `{"wai
 ## Pendientes
 - Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
-- Quitar el dominio `deco-by-dc-landing.vercel.app` del proyecto (el borrado por CLI lo bloquea el permiso de Claude Code).
