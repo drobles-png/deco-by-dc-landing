@@ -41,7 +41,7 @@ export const LOGO_URL =
   'https://res.cloudinary.com/xivqv1l8/image/upload/v1793046516/resources/6ada381a548cdf137f871010/qk1k13nqfndtvmdahwos.png'
 
 // ── Video ─────────────────────────────────────────────────────────────────────
-export const WISTIA_MEDIA_ID = ''
+export const WISTIA_MEDIA_ID = '1447fkgd8h' // "VSL 1 DECO BY DC", 9:58
 // Segundos que el CTA de /ver-video queda bloqueado (0 = sin bloqueo). En localhost son 3 s.
 export const CTA_UNLOCK_SECONDS = 120
 

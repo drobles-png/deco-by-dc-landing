@@ -16,7 +16,7 @@ califica: `/agendar` (calendario GHL `9TWi5r0Z4MuTaSs3lH3c`) → `/cita-confirma
 ## Config (`src/config/funnel.ts`)
 `CLIENT` lleno · Pixel `1911131140329075` · webhooks de contacto y cualificación de la subcuenta del cliente ·
 `ASK_CITY = true` (la visita cuesta distinto fuera de Samborondón) · `STORAGE_PREFIX = 'dc'` ·
-`FUNNEL_TAG = 'funnel-deco'` · `WHATSAPP_NUMBER = '593980216578'` (botón en `/cita-confirmada`) · `VSL_POSTER_FALLBACK = '/cristin.webp'` · `WISTIA_MEDIA_ID` vacío (pendiente).
+`FUNNEL_TAG = 'funnel-deco'` · `WHATSAPP_NUMBER = '593980216578'` (botón en `/cita-confirmada`) · `VSL_POSTER_FALLBACK = '/cristin.webp'` · `WISTIA_MEDIA_ID = 1447fkgd8h` ("VSL 1 DECO BY DC", 9:58).
 `META_CAPI_TOKEN` solo en `.env.local` y Vercel.
 
 ## Landing (FunnelView.vue) — estructura corta, 4 bloques
@@ -38,7 +38,7 @@ renovar, solo_info) · `inversion` (menos_2k, 2k_5k, 5k_10k, mas_10k) · abierta
 o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Regla aprobada por David el 18 nov 2026.
 
 ## Deploy
-Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://decobydc-lng.vercel.app (dominio oficial; `deco-by-dc.vercel.app` sigue vivo hasta cambiar los anuncios, luego se quita en el panel).
+Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://decobydc-lng.vercel.app (único dominio).
 Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
 Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
 Muestras de GHL enviadas el 18 nov 2026. Prueba final en producción (modo ghl) OK el 18 nov: contacto, 3 notas, tags y oportunidad.
@@ -47,5 +47,4 @@ Meta: deduplicación verificada con e2e `--mode meta` (19 nov, 4 eventos con par
 E2E en producción: el botón de `/ver-video` tarda 120 s; usar pasos con `{"wait": 122000}` antes de `[data-cta=calificar]`.
 
 ## Pendientes
-- Media ID de Wistia del VSL (`WISTIA_MEDIA_ID`).
 - `LEGAL` (razón social, RUC, ciudad, correo): las páginas legales muestran "[Pendiente]". No pautar así.
