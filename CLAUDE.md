@@ -38,7 +38,7 @@ renovar, solo_info) · `inversion` (menos_2k, 2k_5k, 5k_10k, mas_10k) · abierta
 o `inversion = menos_2k` (la fabricación arranca en ~$2,000). Regla aprobada por David el 18 nov 2026.
 
 ## Deploy
-Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://deco-by-dc.vercel.app (único dominio, pedido del usuario).
+Vercel equipo `bakano-proyects`, proyecto `deco-by-dc-landing` → https://decobydc-lng.vercel.app (dominio oficial; `deco-by-dc.vercel.app` sigue vivo hasta cambiar los anuncios, luego se quita en el panel).
 Meta en modo landing: `META_PIXEL_ID` + `META_CAPI_TOKEN` en Vercel (production, preview). GHL sin acción de Meta en los flujos del funnel.
 Calendario GHL "Visita tecnica" (`9TWi5r0Z4MuTaSs3lH3c`): 2 h, round robin entre 2 usuarios.
 Muestras de GHL enviadas el 18 nov 2026. Prueba final en producción (modo ghl) OK el 18 nov: contacto, 3 notas, tags y oportunidad.
