@@ -97,22 +97,9 @@ steps: {
         text: 'Fábrica propia, sin subcontratar: todo pasa por nuestro taller y nuestro control de calidad. Y como venimos de las piedras naturales, te asesoramos en mármol, granito, cuarzo y porcelanato.',
       },
     ],
-    budgetNote:
-      'Si el proyecto suma $12,000 y quieres invertir $8,000, no bajamos la calidad para que cuadre. Revisamos juntos cada rubro y dejamos para una segunda etapa lo que no es prioridad.',
     cta: 'Ver el video completo',
   },
 
-  // Referencias de inversión del VSL (fase 3)
-  prices: {
-    title: 'Para que tengas una referencia desde ahora',
-    items: [
-      { space: 'Dormitorio completo', detail: 'Paredes, cama, veladores y espejos', range: '$4,000 – $6,000' },
-      { space: 'Walk-in closet pequeño', detail: '', range: '$2,000 – $3,000' },
-      { space: 'Walk-in closet amplio', detail: '', range: '$5,000 – $8,000' },
-      { space: 'Cocina', detail: 'Remodelación total', range: '$8,000 – $12,000' },
-    ],
-    note: 'Cada proyecto depende del tamaño del espacio y de los acabados que elijas.',
-  },
 
   about: {
     title: `Hola, soy ${PERSON_NAME}.`,

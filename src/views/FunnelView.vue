@@ -183,7 +183,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
       </div>
     </section>
 
-    <!-- 3 · EL PROCESO: línea de tiempo + referencias de inversión -->
+    <!-- 3 · EL PROCESO: línea de tiempo -->
     <section class="process" aria-labelledby="process-title">
       <div class="wrap">
         <h2 id="process-title" v-reveal class="process__title">{{ LANDING.steps.title }}</h2>
@@ -200,20 +200,6 @@ const pad = (n: number) => String(n).padStart(2, '0')
             </li>
           </ol>
 
-          <aside v-reveal class="ledger" aria-labelledby="ledger-title">
-            <h3 id="ledger-title" class="ledger__title">{{ LANDING.prices.title }}</h3>
-            <dl class="ledger__rows">
-              <div v-for="p in LANDING.prices.items" :key="p.space" class="ledger__row">
-                <dt>
-                  {{ p.space }}
-                  <small v-if="p.detail">{{ p.detail }}</small>
-                </dt>
-                <dd>{{ p.range }}</dd>
-              </div>
-            </dl>
-            <p class="ledger__note">{{ LANDING.prices.note }}</p>
-            <p class="ledger__aside">{{ LANDING.steps.budgetNote }}</p>
-          </aside>
         </div>
 
         <div class="process__cta">
@@ -231,7 +217,7 @@ const pad = (n: number) => String(n).padStart(2, '0')
     <section class="about" aria-labelledby="about-title">
       <div class="wrap about__grid">
         <figure v-reveal class="about__figure">
-          <img src="/cristin-taller.webp" :alt="`${PERSON_NAME} revisando un mueble en obra junto a su equipo`" width="1200" height="879" loading="lazy" decoding="async" />
+          <img src="/cristin-estudio.webp" :alt="`${PERSON_NAME} revisando muestras de colores y materiales en su estudio`" width="1200" height="1200" loading="lazy" decoding="async" />
         </figure>
 
         <div v-reveal class="about__copy">
@@ -912,15 +898,8 @@ const pad = (n: number) => String(n).padStart(2, '0')
   }
 
   &__grid {
-    display: grid;
-    gap: 48px;
+    max-width: 800px;
     margin-top: 56px;
-
-    @media (min-width: 960px) {
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 72px;
-      align-items: start;
-    }
   }
 
   &__cta {
@@ -1047,74 +1026,6 @@ const pad = (n: number) => String(n).padStart(2, '0')
   }
 }
 
-.ledger {
-  padding: 32px 28px;
-  background: $stone;
-  border-top: 6px solid $camel;
-
-  @media (min-width: 960px) {
-    position: sticky;
-    top: 100px;
-  }
-
-  &__title {
-    font-family: $font-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.2;
-    color: $espresso;
-  }
-
-  &__rows {
-    margin: 24px 0 0;
-  }
-
-  &__row {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px dashed rgba($espresso, 0.22);
-
-    dt {
-      flex: 1;
-      font-weight: 500;
-      color: $espresso;
-
-      small {
-        display: block;
-        color: $ink-muted;
-        font-size: 0.8125rem;
-        font-weight: 400;
-      }
-    }
-
-    dd {
-      margin: 0;
-      font-variant-numeric: tabular-nums;
-      color: $walnut;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-  }
-
-  &__note {
-    margin-top: 16px;
-    color: $ink-muted;
-    font-size: 0.875rem;
-  }
-
-  &__aside {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba($espresso, 0.14);
-    font-family: $font-serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: $espresso;
-  }
-}
 
 // ── 4 · Cristin ──────────────────────────────────────────────────────────────
 .about {
@@ -1154,7 +1065,6 @@ const pad = (n: number) => String(n).padStart(2, '0')
       height: auto;
       aspect-ratio: 1;
       object-fit: cover;
-      object-position: 72% 40%;
     }
   }
 

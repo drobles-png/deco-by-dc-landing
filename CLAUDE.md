@@ -25,9 +25,9 @@ Trazo = diseño, pieza sólida = fabricación ("lo que ves en el diseño es lo q
 1. Hero: titular serif + Cristin dentro del cuadrado del logo (portada del video; las piezas se arman al cargar).
 2. Banda espresso: origen en las mesas de mármol + foto de la mesa de mármol + isotipo que se "fabrica" (`DecoMark animate`).
    Galería de proyectos (`LANDING.projects`, fotos en `public/proyectos/`, elegidas del IG): mosaico en escritorio, carrusel en celular.
-3. Proceso: línea de tiempo de 4 pasos (visita $40 → diseño $20/m² → el diseño es tuyo → fabricación) +
-   ficha de referencias de inversión del VSL (dormitorio, walk-in, cocina).
-4. Cristin: foto en obra con su equipo (`cristin-taller.webp`), presentación, cifras, «Quedó tal como lo soñaba» y CTA.
+3. Proceso: línea de tiempo de 4 pasos (visita $40 → diseño $20/m² → el diseño es tuyo → fabricación).
+   La ficha de precios de referencia se quitó el 24 nov 2026 a pedido de David.
+4. Cristin: foto en su estudio con muestras (`cristin-estudio.webp`, del IG), presentación, cifras, «Quedó tal como lo soñaba» y CTA.
 Marca: `src/styles/tokens.scss` ($camel, $walnut, $espresso, $stone). Fraunces (títulos) + Outfit (texto).
 Logo redibujado en `BrandLogo.vue` + `DecoMark.vue`; favicon en `public/favicon.svg`.
 
